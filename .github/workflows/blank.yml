@@ -9,13 +9,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Run a multi-line script
-      run: |
-        ls -la /bin
-        ls -la /sbin
-        ls -la /usr/bin
-        ls -la /usr/sbin
-        which ulimit
-        sudo ulimit -Sn 65536
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - name: ulimit -n
+      run: 
+        ulimit -n
+    - name: sudo ulimit -n
+      run: 
+        sudo ulimit -n
+    - name: ls -l /bin
+      run: 
+        ls -l /bin
+    - name: ls -l /sbin
+      run: 
+        ls -l /sbin

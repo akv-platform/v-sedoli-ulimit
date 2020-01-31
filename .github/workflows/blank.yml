@@ -11,6 +11,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run a multi-line script
       run: |
+        which ulimit
         sudo ulimit -Sn 65536
         echo Add other actions to build,
         echo test, and deploy your project.

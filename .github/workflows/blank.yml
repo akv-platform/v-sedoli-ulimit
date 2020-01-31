@@ -11,10 +11,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: ulimit -n
       run: 
-        ulimit -n
-    - name: sudo ulimit -n
+        which ulimit
+    - name: sudo sh -c 'ulimit -n'
       run: 
-        sudo ulimit -n
+        sudo sh -c 'ulimit -n'
     - name: ls -l /bin
       run: 
         ls -l /bin
